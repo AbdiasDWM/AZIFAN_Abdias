@@ -828,6 +828,109 @@
         gap: 0.7rem;
       }
 
+      /* ---------- maintenance section ---------- */
+      #maintenance {
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(0, 217, 255, 0.03),
+          transparent
+        );
+      }
+      #maintenance h2 {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        margin-bottom: 3rem;
+        max-width: 600px;
+      }
+      .maintenance-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+        margin-bottom: 2.5rem;
+      }
+      @media (max-width: 980px) {
+        .maintenance-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 660px) {
+        .maintenance-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .maintenance-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+        transition:
+          border-color 0.35s ease,
+          box-shadow 0.35s ease,
+          transform 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .maintenance-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent-2), var(--accent-4));
+      }
+      .maintenance-card:hover {
+        border-color: rgba(255, 0, 110, 0.35);
+        transform: translateY(-4px);
+        box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.15);
+      }
+      .maintenance-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+      .maintenance-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+        color: var(--text);
+      }
+      .maintenance-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        flex: 1;
+        margin-bottom: 1rem;
+      }
+      .maintenance-features {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+      .maintenance-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .maintenance-features li::before {
+        content: "✓";
+        color: var(--accent-2);
+        font-weight: bold;
+        width: 16px;
+      }
+
       /* ---------- contact ---------- */
       .contact-grid {
         display: grid;
@@ -1101,6 +1204,37 @@
         }
         .project-link {
           font-size: 0.8rem;
+        }
+
+        /* Maintenance Section */
+        #maintenance h2 {
+          font-size: clamp(1.4rem, 3vw, 2rem);
+          margin-bottom: 2rem;
+        }
+        .maintenance-grid {
+          gap: 1.2rem;
+        }
+        .maintenance-card {
+          padding: 1.5rem;
+          min-height: 240px;
+          border-radius: 12px;
+        }
+        .maintenance-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.4rem;
+          margin-bottom: 0.8rem;
+        }
+        .maintenance-card h3 {
+          font-size: 1rem;
+          margin-bottom: 0.6rem;
+        }
+        .maintenance-card p {
+          font-size: 0.85rem;
+          margin-bottom: 0.8rem;
+        }
+        .maintenance-features li {
+          font-size: 0.75rem;
         }
 
         /* Contact Section */
@@ -2447,6 +2581,11 @@
               >Projets</a
             >
           </li>
+          <li>
+            <a href="#maintenance" class="nav-link" data-target="maintenance"
+              >Maintenance</a
+            >
+          </li>
           <li><a href="#contact" class="btn btn-primary">Me contacter</a></li>
         </ul>
       </nav>
@@ -2460,6 +2599,7 @@
       <a href="#about" class="mobile-link">À propos</a>
       <a href="#stack" class="mobile-link">Stack</a>
       <a href="#projects" class="mobile-link">Projets</a>
+      <a href="#maintenance" class="mobile-link">Maintenance</a>
       <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
@@ -2941,6 +3081,109 @@
         </div>
       </section>
 
+      <!-- MAINTENANCE INFORMATIQUE -->
+      <section id="maintenance">
+        <div class="container">
+          <div class="reveal">
+            <div class="eyebrow">~/maintenance</div>
+            <div class="section-note">// services informatiques</div>
+            <h2>Maintenance & Assistance informatique</h2>
+          </div>
+
+          <div class="maintenance-grid reveal-stagger">
+            <!-- Changement OS -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">🖥️</div>
+              <h3>Changement de Système d'Exploitation</h3>
+              <p>
+                Installation et configuration complète de Windows, Linux ou Ubuntu selon vos besoins.
+              </p>
+              <ul class="maintenance-features">
+                <li>Installation Windows (7, 10, 11)</li>
+                <li>Installation Linux/Ubuntu</li>
+                <li>Migration de données</li>
+                <li>Configuration post-installation</li>
+              </ul>
+            </article>
+
+            <!-- Réparation matérielle -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">🔧</div>
+              <h3>Réparation Matérielle</h3>
+              <p>
+                Diagnostic et réparation de problèmes matériels (disque dur, RAM, batterie, etc.)
+              </p>
+              <ul class="maintenance-features">
+                <li>Diagnostic complet</li>
+                <li>Remplacement composants</li>
+                <li>Nettoyage système</li>
+                <li>Test de stabilité</li>
+              </ul>
+            </article>
+
+            <!-- Optimisation système -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">⚡</div>
+              <h3>Optimisation & Nettoyage</h3>
+              <p>
+                Accélérez votre ordinateur en supprimant les fichiers inutiles et optimisant les performances.
+              </p>
+              <ul class="maintenance-features">
+                <li>Suppression malwares</li>
+                <li>Nettoyage registre</li>
+                <li>Optimisation démarrage</li>
+                <li>Gestion des programmes</li>
+              </ul>
+            </article>
+
+            <!-- Installation logiciels -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">📦</div>
+              <h3>Installation & Configuration</h3>
+              <p>
+                Installation, mise à jour et configuration de logiciels professionnels et bureautiques.
+              </p>
+              <ul class="maintenance-features">
+                <li>Suite Office</li>
+                <li>Antivirus/Firewall</li>
+                <li>Logiciels spécialisés</li>
+                <li>Mise à jour système</li>
+              </ul>
+            </article>
+
+            <!-- Support technique -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">🆘</div>
+              <h3>Support Technique</h3>
+              <p>
+                Assistance à distance ou sur site pour résoudre vos problèmes informatiques rapidement.
+              </p>
+              <ul class="maintenance-features">
+                <li>Assistance à distance (TeamViewer)</li>
+                <li>Support sur site</li>
+                <li>Dépannage urgence</li>
+                <li>Conseils personnalisés</li>
+              </ul>
+            </article>
+
+            <!-- Sécurité & Sauvegarde -->
+            <article class="maintenance-card">
+              <div class="maintenance-icon">🔐</div>
+              <h3>Sécurité & Sauvegarde</h3>
+              <p>
+                Protégez vos données avec une sauvegarde sécurisée et une configuration sécurité optimale.
+              </p>
+              <ul class="maintenance-features">
+                <li>Sauvegarde données</li>
+                <li>Récupération données</li>
+                <li>Configuration VPN</li>
+                <li>Chiffrement données</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section id="contact">
         <div class="container">
@@ -3157,7 +3400,7 @@
 
       /* ---------------- nav scroll-spy ---------------- */
       const navLinks = document.querySelectorAll(".nav-link");
-      const sections = ["hero", "about", "stack", "projects"].map((id) =>
+      const sections = ["hero", "about", "stack", "projects", "maintenance"].map((id) =>
         document.getElementById(id),
       );
       const spy = new IntersectionObserver(
